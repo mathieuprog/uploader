@@ -18,7 +18,7 @@ defmodule MyApp.User do
   use Ecto.Schema
   use Uploader.Ecto.UploadableFields
 
-  schema "posts" do
+  schema "users" do
     uploadable_field :avatar_image
   end
 end
@@ -165,7 +165,7 @@ as the map shown above, and generates a virtual field (field prepended by
 "translated_") holding the translated field. For example the `:slug` field
 may contain a map such as `%{"en" => "favorite-books", "fr" => "livres-preferes"}`
 and `:translated_slug` will contain `livres-preferes` if the struct has been
-translated in French. See `i18n_helpers`'s readme.
+translated in French. See `i18n_helpers`'s [readme](https://github.com/mathieuprog/i18n_helpers/blob/master/README.md).
 
 ```elixir
 translatable_field :slug
