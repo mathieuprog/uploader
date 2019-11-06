@@ -45,6 +45,7 @@ defmodule Uploader do
   `maybe_copy_file/4` function. An example of a returned error value is
   `{:error, {:file_path_exists, file_path}}`.
   """
+  @spec store_files(struct) :: {:ok, nil} | {:error, term}
   def store_files(%{__struct__: _struct_name} = entity) do
     uploadable_fields_with_opts = entity.__struct__.get_uploadable_fields()
 
