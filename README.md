@@ -127,7 +127,7 @@ exists. Its value may be:
     * `:overwrite`: overwrite the file if the file path already exists
     * `:compare_hash`: do not copy the file if the file path already exists;
     if the hashes of the files' content are not equal, return an error.
-* `print`: a function that prints the field (typically used be the view).
+* `print`: a function that prints the field (typically used by the view).
 * `type`: the field type.
 
 ### Example case for custom options
