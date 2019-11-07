@@ -3,8 +3,8 @@
 `Uploader` helps you with storing file uploads.
 
 There are numerous file upload libraries for Elixir already available, however
-this library was made in order to have a finer control over how `Plug.Upload`
-are casted into schema fields, over the filenames that should be generated,
+this library was made in order to give the user a finer control over how `Plug.Upload`
+structs are casted into schema fields, over the filenames that should be generated,
 the strategy to apply for existing file paths, etc.
 
 Imagine a single image upload that must to be stored multiple times with filenames
