@@ -176,8 +176,7 @@ uploadable_field :cover_image,
   directory: @uploads_directory,
   filename: &User.filename_cover_image/2,
   on_file_exists: :compare_hash,
-  print: &User.print_cover_image/2,
-  type: :map
+  print: &User.print_cover_image/2
 ```
 
 ```elixir
