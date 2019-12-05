@@ -211,7 +211,7 @@ Add `uploader` for Elixir as a dependency in your `mix.exs` file:
 ```elixir
 def deps do
   [
-    {:uploader, "~> 0.1.0"}
+    {:uploader, "~> 0.2.0"}
   ]
 end
 ```
