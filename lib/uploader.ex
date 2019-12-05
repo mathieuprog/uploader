@@ -51,7 +51,7 @@ defmodule Uploader do
 
     try do
       for {uploadable_field, opts} <- uploadable_fields_with_opts,
-          Map.fetch!(entity, uploadable_field) != nil do
+          field_contains_new_uploaded_file?(entity, uploadable_field) do
         uploader = Keyword.get(opts, :uploader, Uploader.LocalUploader)
         on_file_exists = Keyword.get(opts, :on_file_exists)
         directory = Keyword.get(opts, :directory, "")
@@ -84,6 +84,11 @@ defmodule Uploader do
     catch
       {:break, error} -> error
     end
+  end
+
+  defp field_contains_new_uploaded_file?(entity, uploadable_field) do
+    Map.fetch!(entity, uploadable_field) &&
+      Map.fetch!(entity, String.to_atom("uploaded_" <> Atom.to_string(uploadable_field)))
   end
 
   defp filename(%{__struct__: _struct_name} = entity, field_name) do
